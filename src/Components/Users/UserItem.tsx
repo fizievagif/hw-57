@@ -6,12 +6,12 @@ interface Props {
 }
 
 const UserItem: React.FC<Props> = ({user}) => {
-  let state;
+  let isActiveOrNot;
 
   if(user.checkbox) {
-    state = 'Active';
+    isActiveOrNot = 'Active';
   }else{
-    state = 'Not active';
+    isActiveOrNot = 'Not active';
   }
 
   return (
@@ -22,7 +22,7 @@ const UserItem: React.FC<Props> = ({user}) => {
 
       <div className="px-3 pt-2">
         <p><span className="fw-bold">E-mail: </span>{user.email}</p>
-        <p><span className="fw-bold">State: </span>{state}</p>
+        <p><span className="fw-bold">State: </span>{isActiveOrNot}</p>
         <p><span className="fw-bold">User-role: </span>{user.role}</p>
       </div>
     </div>

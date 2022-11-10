@@ -20,11 +20,9 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
   };
 
   const onCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) {
-      setUser(prev => ({...prev, [e.target.name]: true}));
-    } else {
-      setUser(prev => ({...prev, [e.target.name]: false}));
-    }
+    (e.target.checked) ?
+    setUser(prev => ({...prev, [e.target.name]: true})) :
+    setUser(prev => ({...prev, [e.target.name]: false}));
   };
 
   const onFormSubmit = (e: React.FormEvent) => {
@@ -33,7 +31,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
       id: Math.random().toString(),
       ...user,
     });
-  }
+  };
 
   return (
     <form onSubmit={onFormSubmit}>
@@ -86,9 +84,9 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
 
           <select name="role" id="role" className="form-control" onChange={onUserChange} value={user.role}>
             <option disabled value="">Choose a role</option>
-            <option value="user">User</option>
-            <option value="editor">Editor</option>
-            <option value="admin">Admin</option>
+            <option value="User">User</option>
+            <option value="Editor">Editor</option>
+            <option value="Admin">Admin</option>
           </select>
         </div>
 
