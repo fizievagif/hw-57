@@ -4,7 +4,10 @@ import Users from "./Components/Users/Users";
 import {User} from "./types";
 
 const App = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<User[]>([
+    {id: '1', name: 'Egoistnedlyavseh', email: 'zeus123@mail.ru', checkbox: false, role: 'user'},
+    {id: '2', name: 'V.A.G', email: 'slardar321@mail.ru', checkbox: true, role: 'admin'},
+  ]);
 
   const addUser = (newUser: User) => {
     setUsers(prev => [...prev, newUser]);

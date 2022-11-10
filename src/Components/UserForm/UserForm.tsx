@@ -38,45 +38,53 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
   return (
     <form onSubmit={onFormSubmit}>
       <h4>Add new user</h4>
-      <div className="form-group">
-        <div>
+      <div>
+        <div className="mt-4">
           <label htmlFor="name">Name</label>
+
           <input
             id="name"
             name="name"
             type="text"
             className="form-control"
             onChange={onUserChange}
+            value={user.name}
             required
           />
         </div>
 
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="mt-4">
+          <label htmlFor="email">E-mail</label>
+
           <input
             id="email"
             name="email"
             type="email"
             className="form-control"
             onChange={onUserChange}
+            value={user.email}
             required
           />
         </div>
 
-        <div className="form-control mt-3">
+        <p className="m-0 mt-4">State</p>
+        <div className="form-control">
           <label htmlFor="checkbox">Active</label>
+
           <input
             id="checkbox"
             name="checkbox"
             type="checkbox"
             className="mx-1"
             onChange={onCheckboxChange}
+            checked={user.checkbox}
           />
         </div>
 
-        <div>
+        <div className="mt-4">
           <label htmlFor="role">Role</label>
-          <select name="role" id="role" className="form-control" onChange={onUserChange}>
+
+          <select name="role" id="role" className="form-control" onChange={onUserChange} value={user.role}>
             <option disabled value="">Choose a role</option>
             <option value="user">User</option>
             <option value="editor">Editor</option>

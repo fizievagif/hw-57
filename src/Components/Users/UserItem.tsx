@@ -6,15 +6,24 @@ interface Props {
 }
 
 const UserItem: React.FC<Props> = ({user}) => {
+  let state;
+
+  if(user.checkbox) {
+    state = 'Active';
+  }else{
+    state = 'Not active';
+  }
+
   return (
     <div className="card mb-2">
-      <div className="card-header">
-        <span className="fw-bold">User-role: {user.role}</span>
+      <div className="card-header bg-primary">
+        <p className="m-0 text-white"><span className="fw-bold">Username: </span>{user.name}</p>
       </div>
-      <div className="card-body">
-        <p>Name: {user.name}</p>
-        <p>E-mail: {user.email}</p>
-        <span>Status: {user.checkbox ? 'Active' : 'Not Active'}</span>
+
+      <div className="px-3 pt-2">
+        <p><span className="fw-bold">E-mail: </span>{user.email}</p>
+        <p><span className="fw-bold">State: </span>{state}</p>
+        <p><span className="fw-bold">User-role: </span>{user.role}</p>
       </div>
     </div>
   );
